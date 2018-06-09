@@ -1,0 +1,48 @@
+{
+  "name": "keysign",
+  "version": "0.0.0",
+  "description": "Data signing and verification for rotating credentials and algorithms",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "build": "rimraf dist && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serviejs/keysign.git"
+  },
+  "keywords": [
+    "sign",
+    "verify",
+    "hash",
+    "hmac",
+    "keygrip",
+    "keycrypt"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serviejs/keysign/issues"
+  },
+  "homepage": "https://github.com/serviejs/keysign",
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/node": "^10.3.2",
+    "jest": "^23.1.0",
+    "rimraf": "^2.5.4",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.8.3"
+  }
+}
