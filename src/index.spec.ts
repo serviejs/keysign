@@ -22,6 +22,12 @@ describe('keysign', () => {
     expect(result).toEqual(undefined)
   })
 
+  it('should fail to decode empty buffer', () => {
+    const result = keysign.decode(Buffer.alloc(0))
+
+    expect(result).toEqual(undefined)
+  })
+
   it('should verify the hmac is correct', () => {
     const signed = keysign.encode(Buffer.from('example', 'utf8'))
 
